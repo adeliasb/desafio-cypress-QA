@@ -1,0 +1,16 @@
+{
+  "validUser": {
+    "username": "qa.asbs.lab@gmail.com",
+    "password": "teste@1234"
+  },
+  "checkoutUser": {
+    "firstName": "QA",
+    "lastName": "ASBS",
+    "address1": "Rua Exemplo, 123",
+    "number": "291",
+    "city": "São Paulo",
+    "postcode": "11225000",
+    "phone": "11999999999",
+    "email": "qa.asbs.lab@gmail.com"
+  }
+}
