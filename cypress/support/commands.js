@@ -8,3 +8,8 @@ Cypress.Commands.add("login", (userAlias = "validUser") => {
     loginPage.login(users[userAlias].username, users[userAlias].password);
   });
 });
+
+Cypress.Commands.add("logout", () => {
+  cy.visit("/minha-conta");
+  cy.get('#tbay-topbar a[href*="logout"]').click({ force: true });
+});

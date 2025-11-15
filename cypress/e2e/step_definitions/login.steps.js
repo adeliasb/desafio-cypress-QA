@@ -20,7 +20,7 @@ Então("eu vejo uma mensagem de boas vindas com o meu e-mail", () => {
     const emailPrefix = email.split("@")[0];
     loginPage
       .welcomeMessageContent()
-      .should("be.visible", { timeout: 10000 })
+      .should("be.visible")
       .and("contain", emailPrefix);
   });
 });
