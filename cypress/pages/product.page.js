@@ -21,7 +21,7 @@ export class ProductPage {
   }
 
   clickBuy() {
-    cy.get("button.single_add_to_cart_button").click();
+    cy.get("button.single_add_to_cart_button").should("be.visible").click();
   }
 
   // mensagem de confirmação

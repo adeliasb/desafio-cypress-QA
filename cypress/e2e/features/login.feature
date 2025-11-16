@@ -1,7 +1,7 @@
 # language: pt
 
 Funcionalidade: Login de usuário
-  Como usuário da loja Ebac online
+  Como cliente da loja Ebac online
   Eu quero me autenticar
   Para acessar os dados da minha conta
 

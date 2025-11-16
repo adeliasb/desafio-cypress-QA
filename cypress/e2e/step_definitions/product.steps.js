@@ -45,12 +45,6 @@ Quando("seleciono a opção comprar", () => {
 
 // mensagem de sucesso
 Então("vejo a mensagem de confirmação de que o produto foi adicionado", () => {
-  //cy.wait(500);
-  //   productPage
-  //     .confirmationMessage()
-  //     .should("be.visible")
-  //     .and("contain", "foi adicionado no seu carrinho");
-  // });
   productPage
     .confirmationMessage({ timeout: 10000 })
     .should("be.visible")
