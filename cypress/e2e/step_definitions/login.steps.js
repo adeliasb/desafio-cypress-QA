@@ -1,3 +1,5 @@
+// cypress/e2e/step_definitions/login.steps.js
+
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import { loginPage } from "../../pages/login.page";
 

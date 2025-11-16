@@ -1,13 +1,13 @@
+// cypress/e2e/step_definitions/cart.steps.js
+
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
-import { ProductPage } from "../../pages/product.page";
-import { CartPage } from "../../pages/cart.page";
+import { loginPage } from "../../pages/login.page";
+import { productPage } from "../../pages/product.page";
+import { cartPage } from "../../pages/cart.page";
 
 const Dado = Given;
 const Quando = When;
 const Então = Then;
-
-const productPage = new ProductPage();
-const cartPage = new CartPage();
 
 // -----------------------------
 // LOGIN
