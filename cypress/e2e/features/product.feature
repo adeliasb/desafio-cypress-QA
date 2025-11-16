@@ -7,6 +7,7 @@ Funcionalidade: Seleção do Produto
 
   Cenário: Selecionar um produto e adicionar ao carrinho
     Dado que estou logada na plataforma
+    E estou na página inicial
     E visualizo a lista de produtos disponível
     Quando seleciono o produto desejado
     E escolho o tamanho do produto

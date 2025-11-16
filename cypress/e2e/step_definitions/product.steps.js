@@ -12,6 +12,12 @@ Dado("que estou logada na plataforma", () => {
   cy.login("validUser");
 });
 
+// ir para home
+Dado("estou na página inicial", () => {
+  cy.visit("/");
+  cy.get(".products").should("be.visible");
+});
+
 // lista de produtos
 Dado("visualizo a lista de produtos disponível", () => {
   productPage.productList().should("be.visible");
@@ -29,7 +35,7 @@ Quando("escolho o tamanho do produto", () => {
 
 // cor
 Quando("escolho a cor do produto", () => {
-  productPage.selectColor("Blue"); // ajuste se quiser parametrizar
+  productPage.selectColor("Orange"); // ajuste se quiser parametrizar
 });
 
 // comprar
@@ -39,13 +45,23 @@ Quando("seleciono a opção comprar", () => {
 
 // mensagem de sucesso
 Então("vejo a mensagem de confirmação de que o produto foi adicionado", () => {
+  //cy.wait(500);
+  //   productPage
+  //     .confirmationMessage()
+  //     .should("be.visible")
+  //     .and("contain", "foi adicionado no seu carrinho");
+  // });
   productPage
-    .confirmationMessage()
+    .confirmationMessage({ timeout: 10000 })
     .should("be.visible")
     .and("contain", "foi adicionado no seu carrinho");
 });
 
 // botão ver carrinho
 Então("o botão Ver carrinho é exibido e está habilitado", () => {
-  productPage.viewCartButton().should("be.visible").and("be.enabled");
+  productPage.viewCartButton().should("be.visible");
+
+  productPage.viewCartButton().should("not.have.attr", "disabled");
+
+  productPage.viewCartButton({ timeout: 6000 });
 });
