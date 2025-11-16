@@ -17,7 +17,12 @@ export class ProductPage {
   }
 
   selectColor(color) {
-    cy.get(`#product-4078 li.button-variable-item-${color}`).click();
+    //cy.get(`#product-4078 li.button-variable-item-${color}`).click();
+
+    // Espera até que a variação de cor esteja habilitada
+    cy.get(`#product-4078 li.button-variable-item-${color}`, { timeout: 15000 })
+      .and("not.be.disabled") // garante que é clicável
+      .click();
   }
 
   clickBuy() {

@@ -25,6 +25,12 @@ Dado("adiciono um produto ao carrinho", () => {
   productPage.selectProduct().click();
   productPage.selectSize("M");
   productPage.selectColor("Orange");
+
+  // ESPERA AQUI — somente aqui!
+  // depois das duas seleções
+  cy.get(".woocommerce-variation-add-to-cart-enabled", {
+    timeout: 15000,
+  }).should("exist");
   productPage.clickBuy();
 
   // mensagem de confirmação
@@ -39,6 +45,15 @@ Dado("adiciono um produto ao carrinho", () => {
     .should("be.visible")
     .and("not.have.attr", "disabled");
   productPage.viewCartButton().click();
+
+  // capturar subtotal do carrinho
+  cartPage
+    .productSubtotal()
+    .invoke("text")
+    .then((value) => {
+      const subtotal = value.trim();
+      cy.wrap(subtotal).as("subtotalCarrinho");
+    });
 });
 
 // -----------------------------

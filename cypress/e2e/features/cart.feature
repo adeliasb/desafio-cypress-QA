@@ -1,6 +1,5 @@
 # language: pt
 
-@cart
 Funcionalidade: Carrinho de compras
   Como cliente da loja Ebac online
   Quero adicionar um produto desejado no carrinho
