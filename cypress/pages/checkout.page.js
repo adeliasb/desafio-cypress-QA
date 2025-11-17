@@ -1,9 +1,6 @@
 // cypress/pages/checkout.page.js
 
 export class CheckoutPage {
-  // -----------------------------
-  // CAMPOS DE FATURAMENTO
-  // -----------------------------
   billingFirstName() {
     return cy.get("#billing_first_name");
   }
@@ -48,9 +45,6 @@ export class CheckoutPage {
     return cy.get("#billing_email");
   }
 
-  // -----------------------------
-  // RESUMO DO PEDIDO
-  // -----------------------------
   orderReview(options = {}) {
     return cy.get("form.checkout .details-review > div", options);
   }
@@ -95,12 +89,10 @@ export class CheckoutPage {
     return cy.get(".woocommerce-order-overview__payment-method strong");
   }
 
-  // Tabela de itens do pedido
   orderItems() {
     return cy.get(".woocommerce-table.woocommerce-table--order-details");
   }
 
-  // Endereço de faturamento
   billingDetails() {
     return cy.get(".woocommerce-customer-details address");
   }
